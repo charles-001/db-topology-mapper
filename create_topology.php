@@ -8,7 +8,7 @@
  * @license    http://opensource.org/licenses/MIT
  * @link       https://github.com/vuther/db-topology-mapper
  * @version    1.1
- */
+*/
 
  ///////////////////////////////////////////////////////
  //                Variables to Change                //
