@@ -2,7 +2,7 @@
 /**
  * Database Topology Mapper is a tool that pairs master & slave servers into a beautiful map using D3.js
  * that is easily digestible for DBAs and anyone else in your organization.
- *
+ 
  * @author     Charles Thompson <01charles.t@gmail.com>
  * @copyright  2019 Charles Thompson
  * @license    http://opensource.org/licenses/MIT
