@@ -6,7 +6,7 @@
  * @copyright  2019 Charles Thompson
  * @license    http://opensource.org/licenses/MIT
  * @link       https://github.com/vuther/db-topology-mapper
- * @version    1.0
+ * @version    1.1
 -->
 <html lang="en">
 <head>
@@ -435,30 +435,10 @@
                 .attr("ry", 5)
                 .style("stroke-width", 2)
                 .style("fill", function(d) {
-                    if (d.name == 'Exact environment name') {
-                        return '#d8d844';
-                    } else if (d.name.includes('Part of environment name')) {
-                        return '#f9baff';
-                    } else if (d.name.includes('Part of environment name')) {
-                        return '#cceeff';
-                    } else if (environments.indexOf(d.name) > -1) {
-                        return '#d4d4d4';
-                    } else {
-                        return 'white';
-                    }
+                   return d.fill_color;
                 })
                 .style("stroke", function(d) {
-                    if (d.name == 'Exact environment name') {
-                        return '#5d5d0b';
-                    } else if (d.name.includes('Part of environment name')) {
-                        return '#9d06aa';
-                    } else if (d.name.includes('Part of environment name')) {
-                        return '#005580';
-                    } else if (environments.indexOf(d.name) > -1) {
-                        return '#3c3c3c';
-                    } else {
-                        return '#008000';
-                    }
+                   return d.stroke_color;
                 })
                 .attr("width", 233)
                 .attr("height", 40)

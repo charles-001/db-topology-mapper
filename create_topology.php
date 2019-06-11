@@ -7,25 +7,33 @@
  * @copyright  2019 Charles Thompson
  * @license    http://opensource.org/licenses/MIT
  * @link       https://github.com/vuther/db-topology-mapper
- * @version    1.0
+ * @version    1.1
  */
 
-$root_node           = 'Database Servers'; // First node on the map
-$servers[$root_node] = array('master' => null); // Setup root node
-$environments        = array('Production', 'Staging', 'QA', 'Test', 'Dev');
-$last_updated        = '';
+ ///////////////////////////////////////////////////////
+ //                Variables to Change                //
+ ///////////////////////////////////////////////////////
+$environments = array(
+    "Production" => array('fill_color' => '#d8d844', 'stroke_color' => '#5d5d0b'),
+    "QA"         => array('fill_color' => '#f9baff', 'stroke_color' => '#9d06aa'),
+    "Test"       => array('fill_color' => '#cceeff', 'stroke_color' => '#005580'),
+    "Dev"        => array('fill_color' => '#d4d4d4', 'stroke_color' => '#3c3c3c')
+);
 
 ///////////////////////////////////////////////////////
 //                   Begin script                    //
 ///////////////////////////////////////////////////////
+$root_node           = 'Database Servers'; // First node on the map
+$servers[$root_node] = array('master' => null); // Setup root node
+
 // Save environments to map array
-foreach ($environments as $environment) {
-    $servers[$environment] = array('master' => "Database Servers");
+foreach ($environments as $environment_name => $environment_data) {
+    $servers[$environment_name] = array('master' => "Database Servers");
 }
 
 // Read & decode JSON server list
 $json_server_data = file_get_contents("server_list.json") or die("Cannot open file server_list.json!\n");
-$server_data = json_decode($json_server_data, true);
+$server_data      = json_decode($json_server_data, true);
 
 // Loop through json decoded array and store servers + their metadata
 foreach ($server_data[0] as $key => $value) {
@@ -41,10 +49,7 @@ foreach ($server_data[0] as $key => $value) {
 foreach ($servers as $server_name => $server_details) {
     if (!array_key_exists($server_details['master'], $servers)) {
         if (!$server_details['master']) continue;
-        $servers[$server_details['master']] = array(
-            'master'  => "Database Servers",
-            'version' => "NOT A VALID MASTER"
-        );
+        $servers[$server_details['master']] = array('master'  => "Database Servers");
     }
 }
 
@@ -116,9 +121,9 @@ function formatData($server_name, $branch) {
     $html = '';
 
     if (!isset($branch['version'])) $branch['version'] = 'N/A';
-    if (!isset($branch['role']))  $branch['role']  = '';
+    if (!isset($branch['role']))  $branch['role'] = '';
 
-    if (!in_array($server_name, $environments) && $server_name != $root_node) {
+    if (!array_key_exists($server_name, $environments) && $server_name != $root_node) {
         $html = <<<HTML
             <div class="bubble_header">
                 <div class="bubble_header_text">$server_name ({$branch['ip']})</div>
@@ -136,10 +141,21 @@ HTML;
 HTML;
     }
 
+    // Determine fill/stroke color depending on environment
+    if (array_key_exists($server_name, $environments)) {
+        $fill_color   = $environments[$server_name]['fill_color'];
+        $stroke_color = $environments[$server_name]['stroke_color'];
+    } else {
+        $fill_color   = 'white';
+        $stroke_color = '#008000';
+    }
+
     $formatted = array(
-        "name"     => $server_name,
-        "content"  => $html,
-        "children" => array()
+        "name"           => $server_name,
+        "content"        => $html,
+        "fill_color"     => $fill_color,
+        "stroke_color"   => $stroke_color,
+        "children"       => array()
     );
 
     if (isset($branch['servers'])) {
