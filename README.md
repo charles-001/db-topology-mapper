@@ -2,7 +2,7 @@
 
 ![DB Topology Mapper](https://i.imgur.com/EMP7C5e.png)
 
-```Database Topology Mapper``` is a web tool that pairs master & slave MySQL servers into a beautiful map using D3.js that is easily digestible for DBAs and anyone else in your organization.
+```Database Topology Mapper``` is a web tool that pairs master & slave database servers into a beautiful map using D3.js that is easily digestible for DBAs and anyone else in your organization.
 
 # Installation
 I run this on Apache with PHP 7.2.10, but it should be able to run on whatever you want. To set this up, simply put all the files on your HTTP server and give it a whirl!
