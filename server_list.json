@@ -1,53 +1,53 @@
 [{
-	"shard1": {
-		"ip": "127.0.0.1",
-		"version": "5.7.25",
-		"master": "Production",
-		"role": "MASTER"
-	},
-	"shard2": {
-		"ip": "127.0.0.2",
-		"version": "5.7.25",
-		"master": "shard1",
-		"role": "SLAVE"
-	},
-	"shard3": {
-		"ip": "127.0.0.3",
-		"version": "5.7.25",
-		"master": "shard1",
-		"role": "SLAVE"
-	},
-	"shard4": {
-		"ip": "127.0.0.7",
-		"version": "5.7.25",
-		"master": "Production",
-		"role": "MASTER"
-	},
-	"shard5": {
-		"ip": "127.0.0.8",
-		"version": "5.7.25",
-		"master": "shard4",
-		"role": "SLAVE"
-	},
-	"shard6": {
-		"ip": "127.0.0.9",
-		"version": "5.7.25",
-		"master": "shard4",
-		"role": "SLAVE"
-	},
-	"dev1": {
+    "shard1": {
+        "ip": "127.0.0.1",
+        "version": "5.7.25",
+        "master": "Production",
+        "role": "MASTER"
+    },
+    "shard2": {
+        "ip": "127.0.0.2",
+        "version": "5.7.25",
+        "master": "shard1",
+        "role": "SLAVE"
+    },
+    "shard3": {
+        "ip": "127.0.0.3",
+        "version": "5.7.25",
+        "master": "shard1",
+        "role": "SLAVE"
+    },
+    "shard4": {
+        "ip": "127.0.0.7",
+        "version": "5.7.25",
+        "master": "Production",
+        "role": "MASTER"
+    },
+    "shard5": {
+        "ip": "127.0.0.8",
+        "version": "5.7.25",
+        "master": "shard4",
+        "role": "SLAVE"
+    },
+        "shard6": {
+        "ip": "127.0.0.9",
+        "version": "5.7.25",
+        "master": "shard4",
+        "role": "SLAVE"
+    },
+    "dev1": {
         "ip": "127.0.0.4",
         "version": "5.7.25",
         "master": "Dev",
         "role": "MASTER"
     },
-	"test1": {
+    "test1": {
         "ip": "127.0.0.5",
         "version": "5.7.25",
         "master": "Test",
         "role": "MASTER"
     },
-	"qa1": {
+    "qa1": {
         "ip": "127.0.0.6",
         "version": "5.7.25",
         "master": "QA",
