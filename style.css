@@ -1,0 +1,117 @@
+body {
+    /*font-size: 12px;*/
+    font-family: 'Lato';
+    color: black;
+}
+
+#sidebar {
+    background-image: url('')!important;
+}
+#tree-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.overlay {
+    background-color:#F7F7F7;
+    background-image: url("images/background.png");
+    height: 100%;
+    width: 100%;
+}
+
+.node rect {
+    fill: #fff;
+    stroke: #707070;
+    stroke-width: 2.75px;
+}
+
+.link {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 2px;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    height: 90px;
+    /*width: 250px;*/
+    opacity: .95;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+#blowup {
+    position: absolute;
+    height: 25px;
+    top: 15px;
+    right: 10px;
+    border: none;
+    cursor: pointer;
+    opacity: .85;
+    z-index: 1;
+}
+
+.bubble_header {
+    border-radius: 5px;
+    background-color: #e5ffe5;
+    height: 20px;
+    width: 230px;
+}
+
+.bubble_header_text {
+    font-weight: bold;
+    font-size: 12px;
+    top: 0px;
+    color: #004d00;
+    margin-left: 3px;
+}
+
+.bubble_header_image {
+    float: right;
+    margin-top: 2px;
+    margin-right: -12px;
+    height: 15px;
+}
+
+.bubble_text_version {
+    font-size: 12px;
+    float: left;
+    margin-left: 3px;
+}
+
+.bubble_text_uptime {
+    font-size: 12px;
+    margin-right: -28px;
+    float: right;
+    color: #004d00;
+}
+
+.root_node {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 30px;
+    padding-top: 8px;
+    color: #403d42;
+}
+
+.database_image {
+	height: 100px;
+	margin-left: -15px;
+}
+
+.last_updated {
+    bottom: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+    color: #353535;
+}
