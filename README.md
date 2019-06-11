@@ -1,6 +1,6 @@
 # Database Topology Mapper
 
-![DB Topology Mapper](https://i.imgur.com/3UvPJto.png)
+![DB Topology Mapper](https://i.imgur.com/EMP7C5e.png)
 
 ```Database Topology Mapper``` is a tool that pairs master & slave servers into a beautiful map using D3.js that is easily digestible for DBAs and anyone else in your organization.
 
