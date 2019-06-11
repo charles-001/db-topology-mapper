@@ -29,7 +29,7 @@
         "master": "shard4",
         "role": "SLAVE"
     },
-        "shard6": {
+    "shard6": {
         "ip": "127.0.0.9",
         "version": "5.7.25",
         "master": "shard4",
