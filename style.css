@@ -60,10 +60,12 @@ body {
 }
 
 .bubble_header {
-    border-radius: 5px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
     background-color: #e5ffe5;
-    height: 20px;
-    width: 230px;
+    height: 21px;
+    width: 231px;
+    margin-top: -1px;
 }
 
 .bubble_header_text {
@@ -72,6 +74,7 @@ body {
     top: 0px;
     color: #004d00;
     margin-left: 3px;
+    padding-top: 2px;
 }
 
 .bubble_header_image {
@@ -85,11 +88,13 @@ body {
     font-size: 12px;
     float: left;
     margin-left: 3px;
+    margin-top: 1px;
 }
 
 .bubble_text_uptime {
     font-size: 12px;
     margin-right: -28px;
+    margin-top: 1px;
     float: right;
     color: #004d00;
 }
